@@ -22,7 +22,8 @@ def load_current_resource
   @new_resource.locale ||= @new_resource.name
   locale = @new_resource.locale
 
-  @current_resource = Chef::Resource::Localedef.new(locale).tap { |cr|
-                        cr.has_locale = !!( `locale -a` =~ Regexp.new(locale) )
-                      }
+  @current_resource = Chef::Resource::Localedef.new(locale).tap do |cr|
+    is_locale_nil = (`locale -a` =~ Regexp.new(locale)).nil?
+    cr.has_locale = !is_locale_nil
+  end
 end
