@@ -23,7 +23,10 @@ def load_current_resource
   locale = @new_resource.locale
 
   @current_resource = Chef::Resource::Localedef.new(locale).tap do |cr|
-    is_locale_nil = (`locale -a` =~ Regexp.new(locale)).nil?
+    locales = Mixlib::ShellOut.new('locale -a')
+    locales.run_command
+
+    is_locale_nil = (locales.stdout =~ Regexp.new(locale)).nil?
     cr.has_locale = !is_locale_nil
   end
 end
