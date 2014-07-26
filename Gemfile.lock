@@ -80,6 +80,7 @@ DEPENDENCIES
   docker
   foodcritic
   kitchen-docker
+  rake
   rubocop
   serverspec
   test-kitchen
