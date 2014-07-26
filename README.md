@@ -9,6 +9,7 @@ This is training for the use of chef test suites.
 ### Support
 
 CentOS
+Ubuntu
 
 LWRPs
 ----------
