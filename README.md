@@ -1,5 +1,8 @@
 localedef Cookbook
 ==================
+
+[![Build Status](https://travis-ci.org/yusukegoto/localedef.png?branch=master)](https://travis-ci.org/yusukegoto/localedef)
+
 Add localedef LWRP very Simply.
 This is training for the use of chef test suites.
 
